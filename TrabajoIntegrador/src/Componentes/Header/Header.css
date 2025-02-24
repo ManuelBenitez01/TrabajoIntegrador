@@ -15,6 +15,7 @@ header{
     0px 2px 15px rgba(0,0,0,0.1);
     padding-inline: 2rem;
 }
+
 header a{
     font-weight: 600;
     color: var(--textp);
@@ -70,6 +71,7 @@ header input{
     border-radius: 6px;
     border: solid 1px var(--Bord);
     width: 20%;
+    transition: ease-in-out .5s;
 }
 header input:focus{
     outline: none;
@@ -99,5 +101,4 @@ header nav{
     justify-content: start;
     align-items: center;
     width: 100%;
-    
 }
