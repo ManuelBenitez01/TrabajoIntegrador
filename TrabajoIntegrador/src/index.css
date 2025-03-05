@@ -1,17 +1,33 @@
-:root{
-    --bg1:#F4F4F4;
-    --tarjeta:#FFFFFF;
-    --Bord:#CCCCCC;
-    --textp:#212121;
-    --texts:#555555;
-    --enla:#3B4CCA;
-    --Butto:#FF0000;
-    --Buttot:#FFFFFF;
-    --Buttos:#FFDE00;
-    --Buttoh:#D00000;
-    --Buttoh2:#E0C000;
-    --Buttot2:#212121;
-    --Buttoc:#CCCCCC;
+:root {
+    --bg1: #F4F4F4;
+    --tarjeta: #FFFFFF;
+    --Bord: #CCCCCC;
+    --textp: #212121;
+    --texts: #555555;
+    --enla: #3B4CCA;
+    --Butto: #FF0000;
+    --Buttot: #FFFFFF;
+    --Buttos: #FFDE00;
+    --Buttoh: #D00000;
+    --Buttoh2: #E0C000;
+    --Buttot2: #212121;
+    --Buttoc: #CCCCCC;
+}
+
+[data-theme="dark"] {
+    --bg1: #1A1A1A;
+    --tarjeta: #333333;
+    --Bord: #444444;
+    --textp: #FFFFFF;
+    --texts: #CCCCCC;
+    --enla: #FFDE00;
+    --Butto: #D00000;
+    --Buttot: #212121;
+    --Buttos: #FFAA00;
+    --Buttoh: #B00000;
+    --Buttoh2: #C0A000;
+    --Buttot2: #FFFFFF;
+    --Buttoc: #666666;
 }
 *{
     font-family: "Tiny5", serif;
@@ -21,8 +37,11 @@
     list-style: none;
     text-decoration: none;
 }
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+    background-color: var(--bg1);
+    color: var(--textp);
+}
+#root{
     background-color: var(--bg1);
     color: var(--textp);
 }

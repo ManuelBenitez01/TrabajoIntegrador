@@ -30,6 +30,13 @@ header a{
 
     transition: 0.5s;
 }
+header nav form{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
 header a:hover{
     background-color: var(--Buttoh);
     color: var(--textp);
@@ -80,19 +87,19 @@ header input:focus{
         inset 0px 0px 10px rgba(0,0,0,0.1),
         inset 0px 0px 15px rgba(0,0,0,0.1),
         inset 0px 0px 20px rgba(0,0,0,0.1),
-        0px 0px 10px rgba(255, 0, 0, 0.6), /* Rojo Pokémon */
-        0px 0px 20px rgba(255, 223, 0, 0.8), /* Amarillo Pikachu */
-        0px 0px 30px rgba(59, 76, 202, 0.7); /* Azul Pokémon */
-    transition: 0.5s;
+        0px 0px 10px rgba(255, 0, 0, 0.6), 
+        0px 0px 20px rgba(255, 223, 0, 0.8), 
+        0px 0px 30px rgba(59, 76, 202, 0.7); 
     width: 30%;
 }
 .label{
+    text-transform: capitalize;
     color: #E0C000;
     font-size: 1.5rem;
     text-shadow: 
-    -2px -2px 0 #3B4CCA,  /* Arriba izquierda */
-    2px -2px 0 #3B4CCA,   /* Arriba derecha */
-    -2px 2px 0 #3B4CCA,   /* Abajo izquierda */
+    -2px -2px 0 #3B4CCA,  
+    2px -2px 0 #3B4CCA,   
+    -2px 2px 0 #3B4CCA,   
     2px 2px 0 #3B4CCA;
 }
 header nav{
@@ -101,4 +108,52 @@ header nav{
     justify-content: start;
     align-items: center;
     width: 100%;
+}
+header button {
+    font-weight: 600;
+    color: var(--textp);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: var(--Butto);
+    border: none;
+    cursor: pointer;
+    box-shadow:  
+        0px 0px 10px rgba(0,0,0,0.1),
+        0px 0px 15px rgba(0,0,0,0.1),
+        0px 0px 20px rgba(0,0,0,0.1),
+        0px 0px 25px rgba(0,0,0,0.1);
+    transition: 0.5s;
+}
+
+header button:hover {
+    background-color: var(--Buttoh);
+    color: var(--textp);
+    box-shadow: 
+        0px 0px 10px rgba(0,0,0,0.1),
+        0px 0px 15px rgba(0,0,0,0.1),
+        0px 0px 20px rgba(0,0,0,0.1),
+        0px 0px 10px rgba(255, 0, 0, 0.6), 
+        0px 0px 20px rgba(255, 223, 0, 0.8), 
+        0px 0px 30px rgba(59, 76, 202, 0.7); 
+    transition: 0.5s;
+}
+
+header button:active {
+    background-color: var(--Buttos);
+    color: var(--texts);
+}
+.pokebola{
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 650px;
+    top: 0;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 10px rgba(255, 0, 0, 0.616));
+}
+.pokebola:hover{
+    filter: drop-shadow(0px 0px 10px rgba(172, 1, 1, 0.616), 0px 0px 20px rgba(255, 0, 0, 0.616));
+    transform: scale(1.1);
+    color: white;
 }
