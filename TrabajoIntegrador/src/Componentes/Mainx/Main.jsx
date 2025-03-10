@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PokemonContext from "../PokemonContext/PokemonContext";
 import "./Main.css";
 
@@ -27,6 +27,7 @@ const typeColors = {
 export default function Main() {
     const { data, loadMore, handleTypeSelection, selectedType, showTypes } = useContext(PokemonContext);
     const [backgroundColor, setBackgroundColor] = useState("#fff");
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (selectedType) {
@@ -39,23 +40,47 @@ export default function Main() {
     return (
         <main className="container" style={{ backgroundColor }}>
             <aside className={`aside-tipos ${showTypes ? "visible" : ""}`}>
-                <h2>Filtrar por tipo</h2>
-                <button onClick={() => handleTypeSelection(null)}>Todos</button>
-                {Object.keys(typeColors).map((type) => (
-                    <button key={type} onClick={() => handleTypeSelection(type)} style={{ backgroundColor: typeColors[type][1] }}>
-                        {type.charAt(0).toUpperCase() + type.slice(1)}
-                    </button>
-                ))}
+                   <h2>Filtrar por tipo</h2>
+                   <button 
+                       onClick={() => {
+                           handleTypeSelection(null);
+                           navigate("/"); 
+                       }}
+                       className="type-button"
+                       style={{
+                           background: "linear-gradient(135deg, #ccc, #fff)", 
+                           boxShadow: "0px 0px 15px #ccc",
+                           color: "#333"
+                       }}
+                   >
+                       Todos
+                   </button>
+                   {Object.keys(typeColors).map((type) => (
+                       <button 
+                           key={type} 
+                           onClick={() => {
+                               handleTypeSelection(type);
+                               navigate("/"); 
+                           }} 
+                           className="type-button"
+                           style={{
+                               background: `linear-gradient(135deg, ${typeColors[type][0]}, ${typeColors[type][1]}, ${typeColors[type][2]})`,
+                               boxShadow: `0px 0px 15px ${typeColors[type][1]}`
+                           }}
+                       >
+                           {type.charAt(0).toUpperCase() + type.slice(1)}
+                       </button>
+                   ))}
             </aside>
             <section className="card-grid">
-    {data.map((pokemon) => {
-        const pokemonTypes = pokemon.types.map(type => type.toLowerCase());
-        const colors = pokemonTypes.map(type => typeColors[type]?.[1] || "#ccc");
-
-        
-        const background = colors.length > 1
-            ? `linear-gradient(135deg, ${colors[0]}, ${colors[1]})`
-            : colors[0];
+                {data.map((pokemon) => {
+                const pokemonTypes = pokemon.types.map(type => type.toLowerCase());
+                const colors = pokemonTypes.map(type => typeColors[type]?.[1] || "#ccc");
+                
+                
+                const background = colors.length > 1
+                    ? `linear-gradient(135deg, ${colors[0]}, ${colors[1]})`
+                    : colors[0];
 
         return (
             <div key={pokemon.name} className="pokemon-card" style={{ background }}>
@@ -68,8 +93,8 @@ export default function Main() {
                 <Link to={`/pokemon/${pokemon.name}`} className="card-link">Ver más</Link>
             </div>
         );
-    })}
-</section>
+                })}
+            </section>
             <button onClick={loadMore} className="cargarmas">Cargar más Pokémon</button>
         </main>
     );

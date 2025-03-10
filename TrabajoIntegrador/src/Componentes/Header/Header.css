@@ -1,114 +1,106 @@
-header{
+header {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--tarjeta);
     padding: 1rem;
-    background-color:var(--tarjeta);
-    position: sticky;
-    z-index: 100;
-    top: 0;
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1),
-    0px 2px 10px rgba(0,0,0,0.1),
-    0px 2px 15px rgba(0,0,0,0.1);
-    padding-inline: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
-header a{
-    font-weight: 600;
-    color: var(--textp);
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    background-color: var(--Butto);
-    box-shadow:  0px 0px 10px rgba(0,0,0,0.1),
-     0px 0px 15px rgba(0,0,0,0.1),
-     0px 0px 20px rgba(0,0,0,0.1),
-     0px 0px 25px rgba(0,0,0,0.1);
-
-    transition: 0.5s;
-}
-header nav form{
+nav {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 50%;
-}
-header a:hover{
-    background-color: var(--Buttoh);
-    color: var(--textp);
-    box-shadow: 
-         0px 0px 10px rgba(0,0,0,0.1),
-         0px 0px 15px rgba(0,0,0,0.1),
-         0px 0px 20px rgba(0,0,0,0.1),
-        0px 0px 10px rgba(255, 0, 0, 0.6), 
-        0px 0px 20px rgba(255, 223, 0, 0.8), 
-        0px 0px 30px rgba(59, 76, 202, 0.7); 
-    transition: 0.5s;
-}
-header a:active{
-    background-color: var(--Buttos);
-    color: var(--texts);
-}
-header img{
-    object-fit: contain;
-    height: 300%;
-    position: absolute;
+    width: 100%;
+    padding: 0 1rem;
+    padding-inline-start: 6rem;
     
 }
-header ul{
+
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+    position: absolute;
+    width: 10%;
+    left: 45%;
+}
+
+.pokebola {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+header ul {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    width: 50%;
-}
-header ul li{
     list-style: none;
 }
-header ul li a{
+
+header ul li {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+header ul li a {
     color: var(--textp);
     text-decoration: none;
+    font-weight: 600;
 }
-header input{
+
+header input {
     padding: 10px;
     border-radius: 6px;
     border: solid 1px var(--Bord);
     width: 20%;
     transition: ease-in-out .5s;
 }
-header input:focus{
+
+header input:focus {
     outline: none;
     border: solid 1px var(--Butto);
-    box-shadow: 
-        inset 0px 0px 10px rgba(0,0,0,0.1),
-        inset 0px 0px 15px rgba(0,0,0,0.1),
-        inset 0px 0px 20px rgba(0,0,0,0.1),
-        0px 0px 10px rgba(255, 0, 0, 0.6), 
-        0px 0px 20px rgba(255, 223, 0, 0.8), 
-        0px 0px 30px rgba(59, 76, 202, 0.7); 
-    width: 30%;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.1),
+                inset 0px 0px 15px rgba(0,0,0,0.1),
+                inset 0px 0px 20px rgba(0,0,0,0.1),
+                0px 0px 10px rgba(255, 0, 0, 0.6), 
+                0px 0px 20px rgba(255, 223, 0, 0.8), 
+                0px 0px 30px rgba(59, 76, 202, 0.7); 
+    width: 50%;
 }
-.label{
+
+.label {
     text-transform: capitalize;
     color: #E0C000;
     font-size: 1.5rem;
-    text-shadow: 
-    -2px -2px 0 #3B4CCA,  
-    2px -2px 0 #3B4CCA,   
-    -2px 2px 0 #3B4CCA,   
-    2px 2px 0 #3B4CCA;
+    text-shadow: -2px -2px 0 #3B4CCA,  
+                 2px -2px 0 #3B4CCA,   
+                -2px 2px 0 #3B4CCA,   
+                 2px 2px 0 #3B4CCA;
 }
-header nav{
-    gap: 1rem;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-}
+
 header button {
     font-weight: 600;
     color: var(--textp);
@@ -118,42 +110,80 @@ header button {
     background-color: var(--Butto);
     border: none;
     cursor: pointer;
-    box-shadow:  
-        0px 0px 10px rgba(0,0,0,0.1),
-        0px 0px 15px rgba(0,0,0,0.1),
-        0px 0px 20px rgba(0,0,0,0.1),
-        0px 0px 25px rgba(0,0,0,0.1);
     transition: 0.5s;
 }
 
 header button:hover {
     background-color: var(--Buttoh);
-    color: var(--textp);
-    box-shadow: 
-        0px 0px 10px rgba(0,0,0,0.1),
-        0px 0px 15px rgba(0,0,0,0.1),
-        0px 0px 20px rgba(0,0,0,0.1),
-        0px 0px 10px rgba(255, 0, 0, 0.6), 
-        0px 0px 20px rgba(255, 223, 0, 0.8), 
-        0px 0px 30px rgba(59, 76, 202, 0.7); 
-    transition: 0.5s;
 }
 
 header button:active {
     background-color: var(--Buttos);
-    color: var(--texts);
 }
-.pokebola{
-    width: 50px;
-    height: 100%;
+.menu-list{
     position: absolute;
-    right: 650px;
-    top: 0;
-    cursor: pointer;
-    filter: drop-shadow(0px 0px 10px rgba(255, 0, 0, 0.616));
+    right: 15%;
 }
-.pokebola:hover{
-    filter: drop-shadow(0px 0px 10px rgba(172, 1, 1, 0.616), 0px 0px 20px rgba(255, 0, 0, 0.616));
-    transform: scale(1.1);
-    color: white;
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    header{
+        margin-bottom: 1rem;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--tarjeta);
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+    .logo {
+        width: 20%;
+        left: 40%;
+    }
+    .menu.open {
+        display: flex;
+    }
+
+    header input {
+        width: 80%;
+    }
+    .menu-list{
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    header input {
+        width: 70%;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    header {
+        padding: 0.25rem;
+    }
+
+    .label {
+        font-size: 0.75rem;
+    }
+
+    header input {
+        width: 60%;
+    }
 }

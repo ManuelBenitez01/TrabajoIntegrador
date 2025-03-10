@@ -1,0 +1,67 @@
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    color: var(--textp);
+    padding: 10px 15px;
+    width: 100%;
+    height: 60px;
+    z-index: 100;
+    margin-top: 1rem;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ffcc00, #ff4444, #0075BE);
+    background-size: 200% 200%;
+    animation: moveBackground 5s infinite alternate ease-in-out;
+    border-top: 3px solid #ffcc00;
+    box-shadow: 0px -3px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+footer p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5),
+                 1px 1px 5px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.trainer-name {
+
+    color: var(--Buttot);
+    font-weight: 700;
+    font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5),
+                 1px 1px 5px rgba(0, 0, 0, 0.5);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 1px 1px 5px rgba(255, 204, 0, 0.8); }
+    100% { text-shadow: 1px 1px 10px rgba(255, 204, 0, 1); }
+}
+
+
+.pokeball {
+    width: 40px;
+    height: 40px;
+    animation: spin 4s linear infinite, glowPokeball 2s infinite alternate;
+    filter: drop-shadow(0px 0px 5px rgba(255, 204, 0, 0.8));
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes glowPokeball {
+    0% { filter: drop-shadow(0px 0px 3px rgba(255, 204, 0, 0.5)); }
+    100% { filter: drop-shadow(0px 0px 8px rgba(255, 204, 0, 1)); }
+}

@@ -1,0 +1,178 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg1);
+  color: var(--textp);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--textp);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--tarjeta);
+  padding-inline: 20%;
+  justify-content: center;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--tarjeta);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding-inline: 20%;
+  justify-content: center;
+  border: 2px solid var(--Bord);
+  background: transparent;
+  color: var(--textp);
+  text-align: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.card-details img {
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+    0 6px 20px rgba(0, 0, 0, 0.1),
+    0 8px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.card-details img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.6), 0 0 25px rgba(0, 255, 255, 0.6), 0 0 35px rgba(255, 255, 0, 0.6);
+  filter: hue-rotate(20deg);
+}
+
+.card-details img::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 20px;
+  background: conic-gradient(
+    from 0deg,
+    #ff0088,
+    #ffdd00,
+    #00ffdd,
+    #ff0088
+  );
+  filter: blur(10px);
+  z-index: -1;
+  opacity: 0;
+  animation: neon-rotate 3s linear infinite;
+}
+
+.card-details img:hover::before {
+  opacity: 1;
+}
+
+@keyframes neon-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card-details h2 {
+  margin-bottom: 20px;
+  color: var(--textp);
+}
+
+.card-details p {
+  margin-bottom: 10px;
+  color: var(--texts);
+  text-shadow: var(--texts) 1px 1px 1px;
+}
+
+.card-details strong {
+  color: var(--textp);
+}
+
+.card-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background-color: var(--tarjeta);
+  border: 1px solid var(--Bord);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: var(--textp);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 15px var(--Butto), 0 0 25px var(--Butto);
+}
+
+@media (max-width: 768px) {
+  article {
+    padding-inline: 10%;
+    width: 100%;
+  }
+  .card-details {
+    padding-inline: 10%;
+    width: 100%;
+  }
+  .card-details img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  article {
+    padding-inline: 0%;
+  }
+  .card-details {
+    padding-inline: 0;
+    width: 100%;
+  }
+  .card-details img {
+    width: 100%;
+  }
+}
+
