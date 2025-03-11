@@ -26,8 +26,15 @@ export default function Header() {
             if (searchResult) {
                 navigate(`/pokemon/${query.toLowerCase()}`);
                 setQuery("");
+                setMenuOpen(false); 
             }
         }
+    };
+
+    const handleTypesClick = (e) => {
+        e.preventDefault();
+        toggleTypes();
+        setMenuOpen(false); 
     };
 
     return (
@@ -52,11 +59,9 @@ export default function Header() {
                         <button type="submit">Buscar</button>
                     </form>
                     <ul className="menu-list">
-                        <li >
-                            <Link to="/cartas">Cartas Pokemon</Link>
-                            <a href="#" onClick={(e) => { e.preventDefault(); toggleTypes(); }}>
-                                Tipos
-                            </a>
+                        <li>
+                            <Link to="/cartas" onClick={() => setMenuOpen(false)}>Cartas Pokemon</Link>
+                            <a href="#" onClick={handleTypesClick}>Tipos</a>
                             <TbPokeball className="pokebola" onClick={toggleDarkMode} />
                         </li>
                     </ul>

@@ -25,7 +25,17 @@
     border: 2px solid gold;
     margin-bottom: 2rem;
 }
-
+.cerrarmodal{
+    position: fixed;
+    top: 5%;
+    right: 8%;
+    width: 30px;
+    height: 30px;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: white;
+}
 .pokemon-detail h3 {
     color: white;
     margin-top: 1rem;
@@ -191,6 +201,7 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    
 }
 
 .modal-content {

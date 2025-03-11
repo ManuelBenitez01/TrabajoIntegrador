@@ -4,6 +4,8 @@ import PokemonContext from "../PokemonContext/PokemonContext";
 import Main from "../Mainx/Main";
 import "./Pokemon.css";
 import "../Mainx/Main.css";
+import { FaRectangleXmark } from "react-icons/fa6";
+
 
 
 const typeColors = {
@@ -210,6 +212,8 @@ export default function PokemonDetail() {
                                     <img key={index} src={card.images.large} alt={`Carta ${pokemon.name}`} />
                                 ))}
                             </div>
+                            <FaRectangleXmark className="cerrarmodal" onClick={() => setIsModalOpen(false)} />
+
                             <button onClick={() => setIsModalOpen(false)}>Cerrar</button>
                         </div>
                     </div>

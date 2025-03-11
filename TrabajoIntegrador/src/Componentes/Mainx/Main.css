@@ -24,7 +24,7 @@ aside {
         0px 3px 6px rgba(0, 0, 0, 0.15),
         0px 6px 12px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 5rem;
+    top: 2rem;
     left: -220px; 
     height: auto;
     overflow-y: auto;
@@ -36,6 +36,7 @@ aside {
 
 aside.visible {
     left: 20px;
+    top:.01rem;
 }
 
 
@@ -82,7 +83,7 @@ aside hr {
 section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-gap: 3rem;
     width: 80%;
     padding: 20px;
     background-color: var(--bg1);
@@ -301,6 +302,15 @@ section div {
         gap: 1rem;
         grid-template-columns: .75fr .75fr;
     }
+    .pokemon-card {
+        .card-image {
+            display: none;
+        }
+        .card-image1 {
+            display: block;
+            transform: scale(1.1);
+        }
+}
 }
 @media (max-width: 600px){
     section {
@@ -318,11 +328,11 @@ section div {
         align-items: center;
         justify-items: center;
         width: 100%;
-        gap: 1rem;
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
     }
     .pokemon-card{
-        width: 150px;
-        height: 250px;
+        width: 140px;
+        height: 240px;
     }
 }

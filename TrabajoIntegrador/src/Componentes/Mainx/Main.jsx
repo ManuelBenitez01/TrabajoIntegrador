@@ -25,7 +25,7 @@ const typeColors = {
 };
 
 export default function Main() {
-    const { data, loadMore, handleTypeSelection, selectedType, showTypes } = useContext(PokemonContext);
+    const { data, loadMore, handleTypeSelection, selectedType, showTypes, toggleTypes } = useContext(PokemonContext);
     const [backgroundColor, setBackgroundColor] = useState("#fff");
     const navigate = useNavigate();
 
@@ -45,6 +45,7 @@ export default function Main() {
                        onClick={() => {
                            handleTypeSelection(null);
                            navigate("/"); 
+                           toggleTypes(); 
                        }}
                        className="type-button"
                        style={{
@@ -61,6 +62,7 @@ export default function Main() {
                            onClick={() => {
                                handleTypeSelection(type);
                                navigate("/"); 
+                               toggleTypes(); 
                            }} 
                            className="type-button"
                            style={{
@@ -74,25 +76,23 @@ export default function Main() {
             </aside>
             <section className="card-grid">
                 {data.map((pokemon) => {
-                const pokemonTypes = pokemon.types.map(type => type.toLowerCase());
-                const colors = pokemonTypes.map(type => typeColors[type]?.[1] || "#ccc");
-                
-                
-                const background = colors.length > 1
-                    ? `linear-gradient(135deg, ${colors[0]}, ${colors[1]})`
-                    : colors[0];
+                    const pokemonTypes = pokemon.types.map(type => type.toLowerCase());
+                    const colors = pokemonTypes.map(type => typeColors[type]?.[1] || "#ccc");
 
-        return (
-            <div key={pokemon.name} className="pokemon-card" style={{ background }}>
-                <p className="card-id">#{pokemon.id}</p>
-                <img src={pokemon.img} alt={pokemon.name} className="card-image"/>
-                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${pokemon.id}.gif`} className="card-image1" alt={pokemon.name} />
+                    const background = colors.length > 1
+                        ? `linear-gradient(135deg, ${colors[0]}, ${colors[1]})`
+                        : colors[0];
 
-                <h1 className="card-title">{pokemon.name}</h1>
-                <p className="card-types">{pokemon.types.join(", ")}</p>
-                <Link to={`/pokemon/${pokemon.name}`} className="card-link">Ver más</Link>
-            </div>
-        );
+                    return (
+                        <div key={pokemon.name} className="pokemon-card" style={{ background }}>
+                            <p className="card-id">#{pokemon.id}</p>
+                            <img src={pokemon.img} alt={pokemon.name} className="card-image"/>
+                            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${pokemon.id}.gif`} className="card-image1" alt={pokemon.name} />
+                            <h1 className="card-title">{pokemon.name}</h1>
+                            <p className="card-types">{pokemon.types.join(", ")}</p>
+                            <Link to={`/pokemon/${pokemon.name}`} className="card-link">Ver más</Link>
+                        </div>
+                    );
                 })}
             </section>
             <button onClick={loadMore} className="cargarmas">Cargar más Pokémon</button>

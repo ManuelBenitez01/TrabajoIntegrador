@@ -5,7 +5,6 @@ h2 {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-
 .filters {
     display: flex;
     justify-content: center;
@@ -32,7 +31,6 @@ h2 {
     box-shadow: 0 0 15px var(--Butto);
 }
 
-
 .card-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -42,7 +40,6 @@ h2 {
     position: relative;
     z-index: 1;
 }
-
 
 .card {
     background-color: var(--tarjeta);
@@ -56,7 +53,7 @@ h2 {
     padding: 15px;
     position: relative;
     overflow: hidden;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .card img {
@@ -77,10 +74,6 @@ h2 {
     position: absolute;
     top: -50%;
     left: -50%;
-
-    
-    
-    
     border-radius: 16px;
     background: conic-gradient(
         from 0deg,
@@ -91,10 +84,15 @@ h2 {
     );
     width: 200%;
     height: 200%;
-    filter: blur(10px); 
+    filter: blur(10px);
     z-index: -1;
     opacity: 0;
-    animation: neon-rotate 3s linear infinite; 
+    transition: opacity 0.3s;
+}
+
+.card:hover::before {
+    opacity: 1;
+    animation: neon-rotate 3s linear infinite;
 }
 
 @keyframes neon-rotate {
@@ -106,15 +104,10 @@ h2 {
     }
 }
 
-.card:hover::before {
-    opacity: 1;
-}
-
 .card:hover {
-    transform: scale(1.08); 
+    transform: scale(1.08);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
-
 
 .card::after {
     content: "";
@@ -130,10 +123,10 @@ h2 {
     transition: opacity 0.3s;
 }
 
+
 .card:hover::after {
     opacity: 0.6;
 }
-
 
 .pagination {
     display: flex;
@@ -164,23 +157,36 @@ h2 {
     box-shadow: 0 0 15px var(--Buttoh);
 }
 
+
 @media (max-width: 768px) {
     .card {
-        width: 150px;
+        width: 180px;
+    }
+
+    .card::before {
+        opacity: 1;
+        animation: neon-rotate 3s linear infinite;
+    }
+
+    .card:hover {
+        transform: none; 
+        box-shadow: none; 
     }
 }
 
 @media (max-width: 600px) {
     .card {
-        width: 120px;
+        width: 180px;
+    }
+    .card img{
+        width: 100%;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     .card {
-        width: 100px;
+        width: 140px;
     }
 }
-
 
 
