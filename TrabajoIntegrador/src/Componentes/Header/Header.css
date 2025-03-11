@@ -94,6 +94,7 @@ header input:focus {
 }
 
 .label {
+    cursor: pointer;
     text-transform: capitalize;
     color: #E0C000;
     font-size: 1.5rem;
@@ -140,7 +141,7 @@ header button:active {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 49px;
         right: 0;
         background-color: var(--tarjeta);
         width: 100%;
@@ -188,5 +189,8 @@ header button:active {
 
     header input {
         width: 60%;
+    }
+    .menu{
+        top: 42px;
     }
 }

@@ -26,14 +26,27 @@ aside {
     position: absolute;
     top: 2rem;
     left: -220px; 
-    height: auto;
+    height: fit-content;
     overflow-y: auto;
     border: 2px solid gold;
     transition: left 0.3s ease-in-out; 
     z-index: 100;
+    text-wrap: wrap;
 }
 
-
+.type-button{    
+    font-size: .75rem !important;
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 5px 10px !important;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: capitalize;
+    display: block;
+    width: 80%;
+}
 aside.visible {
     left: 20px;
     top:.01rem;
@@ -83,8 +96,8 @@ aside hr {
 section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 3rem;
-    width: 80%;
+    grid-gap: 2rem;
+    width: 85%;
     padding: 20px;
     background-color: var(--bg1);
     align-items: center;

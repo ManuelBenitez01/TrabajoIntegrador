@@ -41,21 +41,11 @@ export default function Header() {
         <header>
             <nav>
                 <TbAlignJustified className="menu-icon" onClick={() => setMenuOpen(!menuOpen)} />
-                <img 
-                    src="./Logopoke.svg" 
-                    alt="Logo Pokémon" 
-                    className="logo"
-                    onClick={() => navigate("/")}
-                />
+                <img src="./Logopoke.svg" alt="Logo Pokémon" className="logo" onClick={() => {navigate("/"); window.location.reload();}}/>
                 <div className={`menu ${menuOpen ? "open" : ""}`}>
                     <form onSubmit={handleSearch}>
-                        <label htmlFor="Buscador" className="label">Buscamon</label>
-                        <input 
-                            type="search" 
-                            name="Search" 
-                            value={query} 
-                            onChange={onSearchChange} 
-                        />
+                        <label htmlFor="Buscador"className="label" onClick={() => {navigate("/"); window.location.reload();}}>Buscamon</label>
+                        <input type="search" name="Search" value={query} onChange={onSearchChange} />
                         <button type="submit">Buscar</button>
                     </form>
                     <ul className="menu-list">
